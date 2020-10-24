@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Registration Form</title>
+    <script>
+        function check() {
+            var user=["Pradeep","Nagalu"];
+var flag;
+flag = 1;
+            if(flag == 1){
+            if(document.getElementById("uname").value.length<5 || document.getElementById("uname").value.length>10) {
+                flag++;
+                alert("Length is invalid");
+            }
+else if(document.getElementById("phone").value.length!=10) {
+                flag++;
+                alert("Phone number Should have 10 Digits");
+            }
+            else( flag == 1)
+            {
+for(let i =0; i<user.length; i++)
+{
+if(document.getElementById("uname").value == user[i]){
+                        flag++;
+alert("user already exists,enter other uname");
+}
+}
+            }
+}
+            if(flag == 1)
+            {
+                document.getElementById("Display").innerHTML="successfully registered";
+alert(" Registered");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form id="Register" >
+        Name:<input type="text" id="uname"> <br>
+        Contact:<input type="text" id="phone"> <br>
+        <p>
+            Registered Date:
+        <input type="date" placeholder="Enter the book borrowed date" id="check-in"/>
+        </p>
+        <p>
+            Book facility Required:
+            <input type="radio" uname="book">Required
+            <input type="radio" uname="book">Not Required
+        </p>
+        <p>
+            <p>
+                select the books
+                <select  id="books">
+                    <option >Technical</option>
+                    <option >Non-Technical</option>
+                    <option >MBA</option>
+                    <option >BSC</option>
+                    <option >B.Com</option>
+                   
+                </select>
+            </p>
+        </p>
+        Submit:<input type="submit" onclick="check()">
+   
+    <p id="display">
+
+    </p>
+</form>
+</body>
+</html>
